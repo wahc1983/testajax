@@ -1,0 +1,15 @@
+Hello World from Test1 :)<br />
+<%- if ( request.xhr? ) -%>
+  I was called by an AJAX request!
+<%- else -%>
+  I was called by a normal request!
+<%- end -%>
+
+<% @custom_blogs.each do |blog| %>
+<hr />
+<div class="entrada">
+         <h4><%=blog[:id] -%></h4>
+         <h4><%=blog[:name]-%></h4>
+         <h4><%=blog[:content]-%></h4>
+</div>
+<% end %>

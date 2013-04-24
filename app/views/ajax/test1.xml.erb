@@ -1,0 +1,24 @@
+<%-
+  br = "\n"
+  xml = '<?xml version="1.0" encoding="UTF-8"?>' + br
+  xml += '<comments type="array" size="' + @comments.size.to_s + '">' + br
+  
+  @comments.each do |comment|
+    blog = Blog.find( comment.blog_id )
+    user = User.find( blog.user_id )
+    xml += '<comment>' + br
+    xml += '<blog>' + br
+    xml += '<id type="integer">' + blog.id.to_s + '</id>' + br
+    xml += '<content>' + blog.content.to_s + '</content>' + br
+    xml += '<name>' + blog.name.to_s + '</name>' + br
+    xml += '<user>' + br
+    xml += '<id type="integer">' + user.id.to_s + '</id>' + br
+    xml += '<email>' + user.email.to_s + '</email>' + br
+    xml += '</user>' + br
+    xml += '</blog>' + br
+    xml += '</comment>' + br
+  end
+  
+  xml += '</comments>' + br
+-%>
+<%= raw( xml ) -%>

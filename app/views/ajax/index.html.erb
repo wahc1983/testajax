@@ -1,0 +1,16 @@
+<ul>
+  <li> HTML :
+    <%= link_to( 'Test 1.1', test1_ajax_index_url, { :remote => true } ) -%> |
+    <%= link_to( 'Test 1.2', test1_ajax_index_url, { :onClick => 'return(processAjaxLinks( this, \'html\' ));' } ) -%> |
+    <%= link_to( 'Test 1.3', test1_ajax_index_url, { :william => true } ) -%>
+  </li>
+  <li> Scripts :
+    <%= link_to( 'Test 2.1', test1_ajax_index_url, { :remote => true, 'data-type' => 'script' } ) -%> |
+    <%= link_to( 'Test 2.2', test1_ajax_index_url, { :onClick => 'return(processAjaxLinks( this, \'script\' ));' } ) -%> |
+    <%= link_to( 'Test 2.3', test1_ajax_index_url, { :william => true, :dataType => 'script', 'data-type' => 'script' } ) -%>
+  </li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<div id="results">Hola Mundo "William"</div>
