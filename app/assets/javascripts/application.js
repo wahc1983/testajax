@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ajax
+//= require jquery.lightbox-0.5.pack
 // require_tree .
 
 /********************
@@ -48,5 +49,6 @@ function processAjaxLinks( objLnk, dataType ) { // eventObject
 
 jQuery( document ).ready( function( $ ) {
   //jQuery( '[william="true"]' ).bind( 'click', {}, processAjaxLinks );
-  jQuery( 'ul > li' ).on( 'click', 'a[william="true"]', {}, processAjaxLinks );
+  //jQuery( 'ul > li' ).on( 'click', 'a[william="true"]', {}, processAjaxLinks );
+  jQuery('ul > li').eq(2).find('a').lightBox();
 } );
