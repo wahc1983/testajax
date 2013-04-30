@@ -14,8 +14,15 @@
         <%= image_tag "LasTecnicas_kenshin.jpg", :alt => "kenshin", :size => "64x64" %>
           </a>
   </li>
-  <li></li>
+  <li>
+    <a href="ajax/test2" title="Simple form" onclick="Modalbox.show(this.href, {title: this.title}); return false;">
+        <%= image_tag "LasTecnicas_kenshin.jpg", :alt => "kenshin", :size => "64x64" %>
+          </a>
+  </li>
   <li></li>
 </ul>
 <div id="results">Hola Mundo "William"</div>
-
+<div id='blanco'>
+<p> este es el blanco </p>
+</dic>
+<a href="#" onclick="Modalbox.show('&lt;div class=\'warning\'&gt;&lt;p&gt;Are you sure to delete this item?&lt;/p&gt;&lt;input type=\'button\' value=\'Yes, delete!\' onclick=\'Modalbox.hide()\' /&gt; or &lt;input type=\'button\' value=\'No, leave it!\' onclick=\'Modalbox.hide()\' /&gt;&lt;/div&gt;', {title: this.title, width: 300}); return false;"><span>See it in action</span></a>

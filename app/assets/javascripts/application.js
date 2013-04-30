@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ajax
 //= require jquery.lightbox-0.5.pack
+//= require jquery.form
+//= require prototype
+//= require scriptaculous
+//= require modalbox
 // require_tree .
 
 /********************
@@ -47,8 +50,51 @@ function processAjaxLinks( objLnk, dataType ) { // eventObject
   return( false );
 }
 
+function formHandler( objForm ) {
+  var sendByAjax = true;
+  
+  if ( sendByAjax === true ) {
+    var options = {
+      target : '#blanco',
+      beforeSubmit : function( arr, $form, options ) {
+        alert( 'I am going to send the form. If you want to do a validation here could be a righht place to do it!' );
+      },
+      success : function( data, textStatus, jqXHR, jForm ) {
+        alert( 'I already sent the form by AJAX! It is a right place for update the DOM.' );
+        alert( 'Thank you for your comment!' );
+      }
+    };
+    
+    jQuery( objForm ).ajaxSubmit( options );
+    
+    return( false );
+  } else {
+    return( true );
+  }
+}
+
 jQuery( document ).ready( function( $ ) {
   //jQuery( '[william="true"]' ).bind( 'click', {}, processAjaxLinks );
   //jQuery( 'ul > li' ).on( 'click', 'a[william="true"]', {}, processAjaxLinks );
   jQuery('ul > li').eq(2).find('a').lightBox();
+  var options = {
+    beforeSubmit : function( arr, $form, options ) {
+      alert( 'I am going to send the form. If you want to do a validation here could be a righht place to do it!' );
+    },
+    success : function( data, textStatus, jqXHR, jForm ) {
+      alert( 'I already sent the form by AJAX! It is a right place for update the DOM.' );
+      alert( 'Thank you for your comment!' );
+    }
+  };
+/*
+  jQuery('body').on( 'submit', '#myForm', {}, function( eventObject ) {
+    $( this ).ajaxSubmit( options );
+    return( false );
+  } );
+/*
+  jQuery('#myForm').ajaxForm(function() { 
+                alert("Thank you for your comment!");
+                return (false); 
+   });
+*/
 } );

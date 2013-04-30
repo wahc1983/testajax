@@ -1,0 +1,10 @@
+Hello World from Test2 :)<br />
+<%-
+  formStyle = ( ( request.xhr? ) ? ' style="width:100px;"' : '' )
+-%>
+<form id="myForm" action="ajax/test1" method="get" onSubmit="{ Modalbox.hide(); return( formHandler( this ) ); return false;}"<%= raw( formStyle ) -%>>
+    Name: <input type="text" name="name" /> 
+    Comment: <textarea name="comment"></textarea> 
+    <input type="submit" value="Submit Comment" /> 
+</form>
+

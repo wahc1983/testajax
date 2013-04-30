@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-=begin
+
   layout :setLayout
   
   #================
@@ -10,5 +10,5 @@ class ApplicationController < ActionController::Base
     layout = ( ( request.xhr? ) ? false : 'application' )
     return( layout )
   end
-=end
+
 end

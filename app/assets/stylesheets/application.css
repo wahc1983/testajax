@@ -10,5 +10,5 @@
  *
  *= require_self
  *= require jquery.lightbox-0.5
- * require_tree .
+ *= require_tree .
  */

@@ -53,6 +53,15 @@ class AjaxController < ApplicationController
   # test2
   #================
   def test2
-    
+
+    respond_to do |format|
+      format.html { # test1.html.erb
+        layout = ( ( request.xhr? ) ? false : 'application' )
+        render( { :layout => layout } )
+      }
+      format.js # Si existe test1.js.erb si no test1.html.erb SIN layout.
+      format.json { render( { :json => @custom_blogs } ) } # test1.json.erb
+      format.xml #{ render( { :xml => @comments } ) } # test1.xml.erb
+    end
   end
 end
